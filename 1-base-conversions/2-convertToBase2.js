@@ -3,12 +3,37 @@
 /******************************************************************************/
 
 const convertToBase2 = element => {
+
+  // console.log(typeof element);
+ if(typeof element != String)
+  {
+
+     let ret='';
+     //let char='0';
+
+     while(element >0)
+     {
+        if(element %2==0) ret= '0'+ret;
+        else ret = '1'+ret;
+
+        //console.log(element);
+        //ret+=element%2 + char;
+        element = (element - element%2)/2;
+     }
+
+     return  '0b' + ret;
+
+
+  }
+
+  return 'apple sauce'
   // Your code here
 };
 
 /******************************************************************************/
 
 console.log(convertToBase2(4)); // 0b100
+
 console.log(convertToBase2(65)); // 0b1000001
 console.log(convertToBase2(256)); // 0b100000000
 console.log(convertToBase2(123)); // 0b1111011

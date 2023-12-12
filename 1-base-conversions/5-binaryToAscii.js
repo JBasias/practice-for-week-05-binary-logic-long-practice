@@ -22,6 +22,26 @@ const binaryStringToArray = str => {
 };
 
 const binaryToAscii = str => {
+
+  let A = binaryStringToArray(str);
+
+  let ret="";
+
+  for(const el of A)
+  {
+      let num=0;
+
+      for(const c of el)
+      {
+        num = num*2;
+        if(c=='1') num+=1;
+        else num+=0;
+      }
+
+      ret += String.fromCharCode(num);
+  }
+
+  return ret;
   // Your code here
 };
 

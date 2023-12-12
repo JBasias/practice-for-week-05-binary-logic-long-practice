@@ -2,7 +2,37 @@
 
 /******************************************************************************/
 
-const convertToBase16 = element => {
+const convertToBase16 = el => {
+
+
+  let ret = "";
+
+  while(el!=0)
+  {
+   // ret = ret *16;
+   if(el%16==15) ret = 'f' + ret;
+   if(el%16==14) ret = 'e' + ret;
+   if(el%16==13) ret = 'd' + ret;
+   if(el%16==12) ret = 'c' + ret;
+   if(el%16==11) ret = 'b' + ret;
+   if(el%16==10) ret = 'a' + ret;
+   if(el%16==9) ret = '9' + ret;
+   if(el%16==8) ret = '8' + ret;
+   if(el%16==7) ret = '7' + ret;
+   if(el%16==6) ret = '6' + ret;
+   if(el%16==5) ret = '5' + ret;
+   if(el%16==4) ret = '4' + ret;
+   if(el%16==3) ret = '3' + ret;
+   if(el%16==2) ret = '2' + ret;
+   if(el%16==1) ret = '1' + ret;
+   if(el%16==0) ret = '0' + ret;
+   /*
+    ret+= element%16;*/
+    el = (el - el%16)/16;
+  }
+
+  return '0x' + ret
+
   // Your code here
 };
 
